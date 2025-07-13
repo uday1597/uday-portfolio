@@ -4,18 +4,6 @@ import { useRef, useEffect, useState, Suspense } from 'react';
 import { useInView } from 'react-intersection-observer';
 import '@splinetool/viewer';
 
-// Add type declaration for spline-viewer
-/* eslint-disable @typescript-eslint/no-namespace */
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'spline-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
-        url: string;
-      }, HTMLElement>;
-    }
-  }
-}
-
 const Hero = () => {
   const containerRef = useRef(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -103,7 +91,7 @@ const Hero = () => {
           className="relative"
         >
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-gray-500 to-orange-300"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
             animate={{
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
@@ -117,8 +105,8 @@ const Hero = () => {
             }}
           >
             Uday Surya
-          </motion.h1>
 
+          </motion.h1>
         </motion.div>
 
         <motion.div

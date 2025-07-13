@@ -49,7 +49,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('#home')}
               className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200"
             >
-              AK
+              US
             </button>
           </div>
 
