@@ -1,29 +1,35 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Smartphone, Globe } from 'lucide-react';
-
-interface LogoProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const AppleLogo: React.FC<LogoProps> = ({ className, style }) => (
-  <svg viewBox="0 0 384 512" className={className} style={style}>
-    <path
-      fill="currentColor"
-      d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-    />
-  </svg>
-);
+import { Code, Server, LayoutDashboard } from 'lucide-react';
+import { useState } from 'react';
 
 const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
-
+    const cards = [
+    {
+      Icon: Code,
+      title: 'Python Developer',
+      description:
+        'I’ve worked on various Python projects ranging from scripting and automation to web scraping using BeautifulSoup and Selenium. I explored data science libraries like Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn to analyze and visualize data. I’ve also built simple GUIs using Tkinter and experimented with game logic using Turtle. Most of my development and experimentation was done using PyCharm, Jupyter Notebook, and Google Colab.',
+    },
+    {
+      Icon: Server,
+      title: '.NET Full Stack Developer',
+      description:
+        'I’ve built backend services using .NET Core and C#, implementing RESTful APIs and integrating them with frontend applications. I explored Entity Framework for data access, followed clean architecture practices, and maintained modular project structures. I created a repository of .NET concepts for learning and practical use. I’ve also worked with SQL Server, SQLite, and PostgreSQL for database operations, along with authentication flows in full-stack apps.',
+    },
+    {
+      Icon: LayoutDashboard,
+      title: 'React & Next.js Developer',
+      description:
+        'I’ve developed responsive, component-driven UIs using React, Tailwind CSS, and TypeScript. I’ve also built full-stack apps using Next.js and MongoDB, integrating APIs and managing client-side state. My portfolio features 3D UI using Spline, and I’ve worked on deploying apps using platforms like Vercel. Projects like Kathanam and Bought It showcase real-world use of React, Next.js, API integration, and MongoDB in production-ready applications.',
+    },
+  ];
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           ref={ref}
@@ -32,51 +38,61 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#5A189A] via-[#C77DFF] to-[#E0AAFF]">
             About Me
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            I'm a B.Tech undergrad student in Computer Science and Engineering, 
-            passionate about creating innovative mobile and web solutions. I specialize 
-            in Flutter, iOS, and front-end web development.
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            Deep-thinking developer who thrives on untangling complex logic. <br />
+            Builds performant frontends with <span className="text-[#C77DFF]">React</span> and <span className="text-[#E0AAFF]">Next.js</span>. <br />
+            Crafts scalable backends using <span className="text-[#C77DFF]">Python</span>, <span className="text-[#E0AAFF]">.NET</span>, <span className="text-[#C77DFF]">SQL</span> & <span className="text-[#E0AAFF]">MongoDB</span>. <br />
+            Relentless in optimization, precise in problem-solving, and<br/> grounded in practical learning.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              Icon: Smartphone,
-              title: "Flutter Developer",
-              description: "Building cross-platform mobile applications with Flutter, creating beautiful and performant user experiences",
-            },
-            {
-              Icon: AppleLogo,
-              title: "iOS Developer",
-              description: "Developing native iOS applications using Swift and SwiftUI, focusing on Apple's design principles",
-            },
-            {
-              Icon: Globe,
-              title: "Front End Web Developer",
-              description: "Creating responsive and interactive web applications using React, TypeScript, and modern web technologies",
-            },
-          ].map((item, index) => (
+        <div className="grid md:grid-cols-3 gap-8" ref={ref}>
+      {cards.map((item, index) => {
+        const [flipped, setFlipped] = useState(false);
+        return (
+          <motion.div
+            key={index}
+            onClick={() => setFlipped(!flipped)}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            className="perspective cursor-pointer"
+          >
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-glass rounded-xl p-6 backdrop-blur-lg hover:scale-105 hover:shadow-[0_8px_50px_-12px_rgba(71,73,115,0.5)] transition-all duration-300"
+              animate={{ rotateY: flipped ? 180 : 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full h-72 rounded-xl shadow-lg transition-transform transform-style-preserve-3d"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-[#474973]/10 flex items-center justify-center mb-4">
-                  <item.Icon className={`w-8 h-8 ${item.Icon === AppleLogo ? 'text-white' : 'text-blue-500'}`} />
+              {/* Front */}
+              <div className="absolute inset-0 p-6 backface-hidden bg-[#1b1b1b] flex flex-col items-center justify-center rounded-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#5A189A] via-[#9D4EDD] to-[#C77DFF] flex items-center justify-center mb-4">
+                  <item.Icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+                <h3 className="text-xl font-semibold text-[#E0AAFF]">{item.title}</h3>
+                {/* Bounce pointer */}
+                <motion.div
+  animate={{ x: [0, 6, 0] }}
+  transition={{ repeat: Infinity, duration: 1.2 }}
+  className="absolute bottom-3 right-4 text-sm text-transparent bg-clip-text bg-gradient-to-r from-[#9D4EDD] via-[#C77DFF] to-[#E0AAFF] font-medium"
+>
+  More at the back →
+</motion.div>
+
+
+              </div>
+
+              {/* Back */}
+              <div className="absolute inset-0 p-6 backface-hidden rotateY-180 rounded-xl bg-gradient-to-r from-[#5A189A] via-[#9D4EDD] to-[#C77DFF] flex items-center justify-center">
+                <p className="text-white text-sm text-center leading-relaxed">{item.description}</p>
               </div>
             </motion.div>
-          ))}
-        </div>
+          </motion.div>
+        );
+      })}
+    </div>
       </div>
     </section>
   );

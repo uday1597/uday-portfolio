@@ -225,3 +225,15 @@
   opacity: 0 !important;
   transition: visibility 0s 2s, opacity 2s linear !important;
 }
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotateY-180 {
+  transform: rotateY(180deg);
+}

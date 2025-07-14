@@ -7,53 +7,57 @@ const LazyImage = lazy(() => import('../components/LazyImage'));
 
 const projects = [
   {
-    title: "Chat App",
-    description: "A real-time chat application built with Flutter and Firebase",
-    image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80",
-    tags: ["Flutter", "Firebase", "Dart"],
-    github: "https://github.com/uday1597/",
-    live: "#"
+    title: "Kathanam",
+    description: "A full-stack real-time storytelling platform built with Next.js, React, and MongoDB. It enables dynamic user interactions and smooth state handling across multiple views.",
+    image: "/kathanam.png",
+    tags: ["Next JS", "React", "Mongo db"],
+    github: "https://github.com/uday1597/The-Kathanam-project",
+    live: "https://the-kathanam-project.vercel.app/"
   },
   {
     title: "Portfolio Website",
-    description: "Modern personal portfolio featuring interactive 3D animations, smooth transitions, and responsive design built with React and Spline.",
-    image: "/images/portfolio.png",
+    description: "An interactive 3D portfolio built with React, Tailwind CSS, and Spline, featuring smooth animations, type-safe components with TypeScript, and responsive design for a modern web presence.",
+    image: "/portfolio.png",
     tags: ["React", "Tailwind CSS", "TypeScript", "Spline"],
-    github: "https://github.com/uday1597/",
-    live: "#"
+    github: "https://github.com/uday1597/uday-portfolio",
+    live: "https://uday-portfolio-navy.vercel.app/"
   },
   {
-    title: "Monktechnology.net",
-    description: "A modern business website showcasing development and design excellence for creators, featuring a dynamic 3D interface and seamless user experience.",
-    image: "/images/monk-tech.png",
-    tags: ["WIX", "Web Development", "UI/UX", "3D Design"],
-    github: "#",
-    live: "https://github.com/uday1597/",
+    title: "Python projects",
+    description: "A collection of diverse Python-based applications and scripts, covering automation, data manipulation, and small tools to demonstrate practical use of core Python concepts.",
+    image: "/python-coding.jpg",
+    tags: ["Python", "Automation", "Web Scraping", "Tkinter", "Pandas"],
+    github: "https://github.com/search?q=owner%3Auday1597+python&type=repositories"
   },
   {
-    title: "EventSync (TechSprint48 Hackathon)",
-    description: "A one-stop solution for seamless event creation and management, EventSync empowers users to organize events effortlessly, manage RSVPs, and gain actionable analytics for better engagement and planning.",
-    image: "/images/eventsync.png",
-    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "MongoDB", "Mongoose"],
-    github: "https://github.com/uday1597/",
-    live: "#"
+    title: "Dot net concepts",
+    description: "A curated repository of .NET and C# concepts including API design, Entity Framework, authentication, and clean architecture principles — ideal for interview prep and backend mastery.",
+    image: "/dotnet.avif",
+    tags: [".Net", "C#"],
+    github: "https://github.com/uday1597/dotnetConcepts"
   },
   {
-    title: "Bellarisse",
-    description: "A beautifully crafted e-commerce platform for Bellarisse, an Indian luxury handbag startup. The website combines elegant design with smooth shopping experiences, showcasing premium collections and providing a seamless journey from browsing to checkout.",
-    image: "/images/bellarisse.png",
-    tags: ["Framer", "Shopify"],
-    github: "#",
-    live: "https://www.bellarisse.com/"
+    title: "Bought it",
+    description: "A full-stack e-commerce platform built with React on the frontend and Node.js/Express with MongoDB on the backend. Features product browsing, detail views, and a structured API powered by Mongoose.",
+    image: "/boughtit.png",
+    tags: ["React", "Dot net", "JavaScript", "Node.js", "Express.js", "Axios", "MongoDB", "Mongoose"],
+    github: "https://github.com/uday1597/bought-it"
   },
   {
-    title: "Arcadia Design",
-    description: "A modern and visually striking portfolio website for Arcadia Design, a Canadian architecture firm. The site highlights their innovative projects, design philosophy, and expertise, offering an immersive experience for potential clients and collaborators.",
-    image: "/images/arcadia.png",
-    tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "TypeScript"],
-    github: "#",
-    live: "https://www.arcadiadesignsinc.com/"
+    title: "Krishna Airlines",
+    description: "An airline management system with features like flight booking, seat selection, and user authentication, built for a smooth and interactive user experience.",
+    image: "/krishna-airlines.png",
+    tags: ["React 18", "Redux Toolkit, Thunk", "MUI v5, Atlaskit, Material UI v4", "Google & Facebook Login", "React Hook Form", "Axios", "Jest", "React Router"],
+    github: "https://github.com/uday1597/airline_mangement"
   }
+  // {
+  //   title: "Arcadia Design",
+  //   description: "A modern and visually striking portfolio website for Arcadia Design, a Canadian architecture firm. The site highlights their innovative projects, design philosophy, and expertise, offering an immersive experience for potential clients and collaborators.",
+  //   image: "/images/arcadia.png",
+  //   tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "TypeScript"],
+  //   github: "#",
+  //   live: "https://www.arcadiadesignsinc.com/"
+  // }
 ];
 
 const Projects = () => {
@@ -91,11 +95,10 @@ const Projects = () => {
                   <LazyImage
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-48 object-cover transform transition-transform duration-500 ${
-                      project.title === "Portfolio Website" || project.title === "Monktechnology.net" 
-                      ? "scale-110 group-hover:scale-125" 
+                    className={`w-full h-48 object-cover transform transition-transform duration-500 ${project.title === "Portfolio Website" || project.title === "Monktechnology.net"
+                      ? "scale-110 group-hover:scale-125"
                       : "group-hover:scale-110"
-                    }`}
+                      }`}
                   />
                 </Suspense>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -114,25 +117,22 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  {(project.title === "Monktechnology.net" || project.title === "Bellarisse" || project.title === "Arcadia Design") ? (
-                    <a
-                      href={project.live}
-                      className="text-gray-400 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="w-6 h-6" />
-                    </a>
-                  ) : (
-                    <a
-                      href={project.github}
-                      className="text-gray-400 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-6 h-6" />
-                    </a>
-                  )}
+                  {project.live && <a
+                    href={project.live}
+                    className="text-gray-400 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-6 h-6" />
+                  </a>}
+                  <a
+                    href={project.github}
+                    className="text-gray-400 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="w-6 h-6" />
+                  </a>
                 </div>
               </div>
             </motion.div>

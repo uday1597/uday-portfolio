@@ -91,7 +91,7 @@ const Hero = () => {
           className="relative"
         >
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#10002B] via-[#7B2CBF] to-[#E0AAFF]"
             animate={{
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
@@ -105,8 +105,8 @@ const Hero = () => {
             }}
           >
             Uday Surya
-
           </motion.h1>
+
         </motion.div>
 
         <motion.div
@@ -117,7 +117,7 @@ const Hero = () => {
         >
           <br />
           <motion.span
-            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#5A189A] via-[#9D4EDD] to-[#E0AAFF]"
             animate={{
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
@@ -132,6 +132,7 @@ const Hero = () => {
           >
             Frontend Dreamer, Python Schemer
           </motion.span>
+
         </motion.div>
         <br />
         <span className="font-light">more about me</span>
@@ -160,9 +161,9 @@ const Hero = () => {
                 filter: "brightness(1.5)",
               }}
             >
-              <Icon size={40} className="relative z-10 text-blue-500" />
+              <Icon size={40} className="relative z-10 text-[#C77DFF]" />
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur-lg"
+                className="absolute inset-0 bg-gradient-to-r from-[#240046] via-[#9D4EDD] to-[#C77DFF] rounded-full opacity-0 group-hover:opacity-20 blur-lg"
                 initial={false}
                 animate={{
                   scale: [1, 1.5, 1],
@@ -172,6 +173,7 @@ const Hero = () => {
                   repeat: Infinity,
                 }}
               />
+
             </motion.a>
           ))}
         </motion.div>
@@ -195,8 +197,14 @@ const Hero = () => {
           }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-gray-400 text-sm">Scroll Down</span>
-          <ChevronDown className="w-6 h-6 text-gray-400" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D4EDD] via-[#C77DFF] to-[#E0AAFF] text-sm font-medium">
+            Scroll Down
+          </span>
+          <div className="relative">
+            <ChevronDown className="w-6 h-6 text-white relative z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#5A189A] via-[#C77DFF] to-[#E0AAFF] blur-lg rounded-full opacity-40" />
+          </div>
+
         </motion.div>
       </motion.div>
     </div>

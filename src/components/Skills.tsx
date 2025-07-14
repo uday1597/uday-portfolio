@@ -1,115 +1,137 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code2, Smartphone, Globe, Database, GitBranch, Layout, Palette, Store, Sparkles, Boxes } from 'lucide-react';
+import {
+  Code2,
+  Database,
+  GitBranch
+} from 'lucide-react';
 
 interface LogoProps {
   className?: string;
   style?: React.CSSProperties;
 }
-
-const FlutterLogo: React.FC<LogoProps> = ({ className, style }) => (
-  <img 
-    src="https://img.icons8.com/color/512/flutter.png" 
-    alt="Flutter" 
+const PythonLogo: React.FC<LogoProps> = ({ className, style }) => (
+  <img
+    src="https://img.icons8.com/color/480/python--v1.png"
+    alt="Python"
     className={`w-12 h-12 ${className}`}
     style={style}
   />
 );
-
-const AppleLogo: React.FC<LogoProps> = ({ className, style }) => (
-  <svg viewBox="0 0 384 512" className={`w-8 h-8 text-white ${className}`} style={style}>
-    <path
-      fill="currentColor"
-      d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+const ReactNextLogo: React.FC<LogoProps> = ({ className, style }) => (
+  <div
+    className={`flex items-center justify-center gap-2 ${className}`}
+    style={style}
+  >
+    <img
+      src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+      alt="React"
+      className="w-6 h-6"
     />
-  </svg>
+    <img
+      src="https://cdn.worldvectorlogo.com/logos/next-js.svg"
+      alt="Next.js"
+      className="w-6 h-6 bg-white rounded-full p-0.5"
+    />
+  </div>
+);
+const CSharpLogo: React.FC<LogoProps> = ({ className, style }) => (
+  <img
+    src="https://cdn.worldvectorlogo.com/logos/c--4.svg"
+    alt="C#"
+    className={`w-10 h-10 ${className}`}
+    style={style}
+  />
 );
 
-const SplineLogo: React.FC<LogoProps> = ({ className, style }) => (
-  <Boxes className={`w-8 h-8 text-white ${className}`} style={style} />
+const AngularLogo: React.FC<LogoProps> = ({ className, style }) => (
+  <img
+    src="https://angular.io/assets/images/logos/angular/angular.svg"
+    alt="Angular"
+    className={`w-10 h-10 ${className}`}
+    style={style}
+  />
+);
+const AzureALogo: React.FC<LogoProps> = ({ className, style }) => (
+  <img src="/Azure Devops.svg"
+
+    alt="Azure"
+    className={`w-10 h-10 ${className}`}
+    style={style}
+  />
+);
+
+
+const AzurePortalLogo: React.FC<LogoProps> = ({ className, style }) => (
+  <img
+    src="/Microsoft_Azure.svg"
+    alt="Azure Portal"
+    className={`w-10 h-10 ${className}`}
+    style={style}
+  />
 );
 
 const Skills = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
-    rootMargin: "50px",
+    rootMargin: '50px',
   });
 
+
   const skills = [
+
     {
-      Icon: FlutterLogo,
-      title: "Flutter",
-      description: "Cross-platform mobile app development with Flutter, creating beautiful and performant applications for both iOS and Android platforms.",
+      Icon: PythonLogo,
+      title: 'Python',
+      description: 'Efficient scripting, automation and backend services using Python.',
     },
     {
-      Icon: AppleLogo,
-      title: "Swift",
-      description: "Native iOS development using Swift and SwiftUI, building high-performance applications following Apple's design guidelines.",
+      Icon: ReactNextLogo,
+      title: 'React / Next.js',
+      description: 'Frontend development using React and full-stack workflows with Next.js.',
     },
     {
-      Icon: Smartphone,
-      title: "Android Development",
-      description: "Native Android app development using Kotlin and Jetpack Compose, creating responsive and user-friendly mobile applications.",
-    },
-    {
-      Icon: Globe,
-      title: "React",
-      description: "Modern web development with React, creating responsive and interactive user interfaces with component-based architecture.",
-    },
-    {
-      Icon: Code2,
-      title: "JavaScript",
-      description: "Dynamic web development with JavaScript, building interactive and responsive applications with modern ES6+ features.",
+      Icon: CSharpLogo,
+      title: '.NET Core',
+      description: 'Robust backend APIs and scalable systems built with .NET Core.',
     },
     {
       Icon: Database,
-      title: "Firebase",
-      description: "Backend development and real-time data management using Firebase, implementing authentication, cloud storage, and real-time databases.",
+      title: 'SQL & MongoDB',
+      description: 'Strong grasp on relational and NoSQL databases for data-driven apps.',
     },
     {
       Icon: GitBranch,
-      title: "Git",
-      description: "Version control and collaborative development using Git, managing code repositories and implementing efficient workflows.",
-    }
-  ];
-
-  const tools = [
-    {
-      Icon: Layout,
-      title: "Webflow",
-      description: "No-code web development using Webflow, creating responsive and interactive websites with custom animations and interactions.",
+      title: 'Git & Jira',
+      description: 'Version control and agile project tracking with Git and Jira.',
     },
     {
-      Icon: Palette,
-      title: "Figma",
-      description: "UI/UX design and prototyping using Figma, creating user-centered designs and interactive prototypes for web and mobile applications.",
+      Icon: AngularLogo,
+      title: 'Angular',
+      description: 'SPAs using Angular and TypeScript for enterprise-grade apps.',
     },
     {
-      Icon: Store,
-      title: "Wix",
-      description: "Website development and e-commerce solutions using Wix, building professional websites with integrated business tools.",
+      Icon: Code2,
+      title: 'JavaScript',
+      description: 'ES6+ JavaScript for building dynamic and interactive web apps.',
     },
     {
-      Icon: Sparkles,
-      title: "Framer",
-      description: "Interactive prototyping and web development with Framer, creating high-fidelity prototypes and responsive websites.",
+      Icon: AzureALogo,
+      title: 'Azure & DevOps',
+      description: 'CI/CD, deployment pipelines, and Azure cloud services.',
     },
     {
-      Icon: Store,
-      title: "Shopify",
-      description: "E-commerce development using Shopify, building online stores with custom themes and integrated payment solutions.",
-    },
-    {
-      Icon: SplineLogo,
-      title: "Spline",
-      description: "3D design and interactive web experiences using Spline, creating immersive 3D content and animations for web applications.",
+      Icon: AzurePortalLogo,
+      title: 'Azure Portal',
+      description: 'Managing cloud infrastructure and services through Azure Portal.',
     }
   ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
+    <section id="skills" className="py-20 relative overflow-hidden bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Section Heading */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -117,62 +139,41 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+          <motion.h2
+            className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#5A189A] via-[#9D4EDD] to-[#E0AAFF]"
+            animate={{
+              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: 'linear'
+            }}
+            style={{ backgroundSize: '300% 300%' }}
+          >
             Skills
-          </h2>
+          </motion.h2>
+
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and expertise in various technologies.
+            Technologies I use to build full-stack, scalable, and cloud-ready applications.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {/* Skills Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map(({ Icon, title, description }, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="bg-glass rounded-xl p-6 backdrop-blur-lg hover:scale-105 hover:shadow-[0_8px_50px_-12px_rgba(59,130,246,0.5)] transition-all duration-300"
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative rounded-xl p-6 backdrop-blur-md bg-gradient-to-br from-[#2a105b]/70 via-[#3e1f6e]/70 to-[#4c2884]/70 border border-white/10 hover:scale-105 transition-all duration-300 hover:shadow-[0_8px_40px_-12px_rgba(199,125,255,0.3)]"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
-                  <Icon />
+                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4">
+                  <Icon className="w-8 h-8 text-gray-200" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-gray-400">{description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-            Tools
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Additional tools and platforms I work with to create comprehensive digital solutions.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tools.map(({ Icon, title, description }, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="bg-glass rounded-xl p-6 backdrop-blur-lg hover:scale-105 hover:shadow-[0_8px_50px_-12px_rgba(59,130,246,0.5)] transition-all duration-300"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
-                  <Icon />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-200">{title}</h3>
                 <p className="text-gray-400">{description}</p>
               </div>
             </motion.div>
