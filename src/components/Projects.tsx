@@ -38,10 +38,11 @@ const projects = [
   },
   {
     title: "Bought it",
-    description: "A full-stack e-commerce platform built with React on the frontend and Node.js/Express with MongoDB on the backend. Features product browsing, detail views, and a structured API powered by Mongoose.",
+    description: "A full-stack e-commerce platform built with React on the frontend and Node.js/Express with MongoDB on the backend. Features product browsing, detail views, and a structured API powered by Mongoose. ⚠️ Note: The live project requires the database to be seeded and the Node.js web service to be resumed for full functionality.",
     image: "/boughtit.png",
     tags: ["React", "Dot net", "JavaScript", "Node.js", "Express.js", "Axios", "MongoDB", "Mongoose"],
-    github: "https://github.com/uday1597/bought-it"
+    github: "https://github.com/uday1597/bought-it",
+    live: "https://bought-it.vercel.app/"
   },
   {
     title: "Krishna Airlines",
