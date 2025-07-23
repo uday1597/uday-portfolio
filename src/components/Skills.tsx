@@ -53,7 +53,7 @@ const AngularLogo: React.FC<LogoProps> = ({ className, style }) => (
   />
 );
 const AzureALogo: React.FC<LogoProps> = ({ className, style }) => (
-  <img src="/Azure Devops.svg"
+  <img src={`${import.meta.env.BASE_URL}azure-devops.svg`}
 
     alt="Azure"
     className={`w-10 h-10 ${className}`}
@@ -64,7 +64,7 @@ const AzureALogo: React.FC<LogoProps> = ({ className, style }) => (
 
 const AzurePortalLogo: React.FC<LogoProps> = ({ className, style }) => (
   <img
-    src="/Microsoft_Azure.svg"
+    src={`${import.meta.env.BASE_URL}microsoft-azure.svg`}
     alt="Azure Portal"
     className={`w-10 h-10 ${className}`}
     style={style}

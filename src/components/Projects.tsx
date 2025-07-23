@@ -9,7 +9,7 @@ const projects = [
   {
     title: "Kathanam",
     description: "A full-stack real-time storytelling platform built with Next.js, React, and MongoDB. It enables dynamic user interactions and smooth state handling across multiple views.",
-    image: "/kathanam.png",
+    image: `${import.meta.env.BASE_URL}kathanam.png`,
     tags: ["Next JS", "React", "Mongo db"],
     github: "https://github.com/uday1597/The-Kathanam-project",
     live: "https://the-kathanam-project.vercel.app/"
@@ -17,29 +17,29 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "An interactive 3D portfolio built with React, Tailwind CSS, and Spline, featuring smooth animations, type-safe components with TypeScript, and responsive design for a modern web presence.",
-    image: "/portfolio.png",
+    image: `${import.meta.env.BASE_URL}portfolio.png`,
     tags: ["React", "Tailwind CSS", "TypeScript", "Spline"],
     github: "https://github.com/uday1597/uday-portfolio",
-    live: "https://uday-portfolio-navy.vercel.app/"
+    live: "https://uday1597.github.io/uday-portfolio/"
   },
   {
     title: "Python projects",
     description: "A collection of diverse Python-based applications and scripts, covering automation, data manipulation, and small tools to demonstrate practical use of core Python concepts.",
-    image: "/python-coding.jpg",
+    image: `${import.meta.env.BASE_URL}python-coding.jpg`,
     tags: ["Python", "Automation", "Web Scraping", "Tkinter", "Pandas"],
     github: "https://github.com/search?q=owner%3Auday1597+python&type=repositories"
   },
   {
     title: "Dot net concepts",
     description: "A curated repository of .NET and C# concepts including API design, Entity Framework, authentication, and clean architecture principles — ideal for interview prep and backend mastery.",
-    image: "/dotnet.avif",
+    image: `${import.meta.env.BASE_URL}dotnet.avif`,
     tags: [".Net", "C#"],
     github: "https://github.com/uday1597/dotnetConcepts"
   },
   {
     title: "Bought it",
     description: "A full-stack e-commerce platform built with React on the frontend and Node.js/Express with MongoDB on the backend. Features product browsing, detail views, and a structured API powered by Mongoose. ⚠️ Note: The live project requires the database to be seeded and the Node.js web service to be resumed for full functionality.",
-    image: "/boughtit.png",
+    image: `${import.meta.env.BASE_URL}boughtit.png`,
     tags: ["React", "Dot net", "JavaScript", "Node.js", "Express.js", "Axios", "MongoDB", "Mongoose"],
     github: "https://github.com/uday1597/bought-it",
     live: "https://bought-it.vercel.app/"
@@ -47,7 +47,7 @@ const projects = [
   {
     title: "Krishna Airlines",
     description: "An airline management system with features like flight booking, seat selection, and user authentication, built for a smooth and interactive user experience.",
-    image: "/krishna-airlines.png",
+    image: `${import.meta.env.BASE_URL}krishna-airlines.png`,
     tags: ["React 18", "Redux Toolkit, Thunk", "MUI v5, Atlaskit, Material UI v4", "Google & Facebook Login", "React Hook Form", "Axios", "Jest", "React Router"],
     github: "https://github.com/uday1597/airline_mangement"
   }

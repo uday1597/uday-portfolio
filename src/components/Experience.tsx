@@ -11,19 +11,19 @@ const Experience = () => {
     className?: string;
     style?: React.CSSProperties;
   }
+const ThoughtworksIcon: React.FC<LogoProps> = ({ className, style }) => (
+  <img
+    src={`${import.meta.env.BASE_URL}tw.jpeg`}
+    alt="thoughtworks"
+    className={`w-10 h-10 ${className}`}
+    style={style}
+  />
+);
 
-  const ThoughtworksIcon: React.FC<LogoProps> = ({ className, style }) => (
-    <img
-      src="/tw.jpeg"
-      alt="thoughtworks"
-      className={`w-10 h-10 ${className}`}
-      style={style}
-    />
-  );
 
   const AdpIcon: React.FC<LogoProps> = ({ className, style }) => (
     <img
-      src="/adp.svg"
+      src={`${import.meta.env.BASE_URL}adp.svg`}
       alt="adp"
       className={`w-10 h-10 ${className}`}
       style={style}
@@ -32,7 +32,7 @@ const Experience = () => {
 
   const EpamIcon: React.FC<LogoProps> = ({ className, style }) => (
     <img
-      src="/epam.svg"
+      src={`${import.meta.env.BASE_URL}epam.svg`}
       alt="epam"
       className={`w-10 h-10 ${className}`}
       style={style}
@@ -41,7 +41,7 @@ const Experience = () => {
 
   const MtIcon: React.FC<LogoProps> = ({ className, style }) => (
     <img
-      src="/mindtree.jpeg"
+      src={`${import.meta.env.BASE_URL}mindtree.jpeg`}
       alt="mindtree"
       className={`w-10 h-10 ${className}`}
       style={style}
